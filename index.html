@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <form class="form">
+      <label class="label">Choose a location:</label>
+
+      <select class="options" name="location" id="locations">
+        <option selected disabled>-Select-</option>
+        <option class="options" value="lima">Lima</option>
+        <option class="options" value="buenos-aires">Buenos Aires</option>
+        <option class="options" value="montevideo">Montevideo</option>
+        <option class="options" value="madrid">Madrid</option>
+        <option class="options" value="barcelona">Barcelona</option>
+        <option class="options" value="paris">Paris</option>
+        <option class="options" value="new york">New York</option>
+        <option class="options" value="illinois">Illinois</option>
+        <option class="options" value="tokio">Tokio</option>
+        <option class="options" value="sidney">Sidney</option>
+        <option class="options" value="tel-aviv">Tel-Aviv</option>
+      </select>
+    </form>
+    <div class="root" id="root">
+      <div class="data">
+        <div class="city-country">
+          <p id="day">---</p>
+          <p><span id="city">--</span>, <span id="country">--</span></p>
+        </div>
+        <div class="weather-main">
+          <div class="temperature-data">
+            <p class="celsius"><span id="temp_c">--</span>ºC</p>
+            <p class="feels-like">
+              Feels like temp: <span id="feels-like">--</span> ºC
+            </p>
+          </div>
+          <div class="image-condition">
+            <img id="img-weather" src="#" alt="image-weather" />
+            <p class="condition" id="condition">--</p>
+          </div>
+        </div>
+        <div class="additional-data">
+          <p>Date: <span id="date">00--00--00</span></p>
+          <p>Local Time: <span id="time">--:--</span></p>
+          <p>Humidity: <span id="humidity">--</span> %</p>
+          <p>Wind: <span id="wind">--</span> km/h</p>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
