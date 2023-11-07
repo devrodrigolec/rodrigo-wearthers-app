@@ -1,3 +1,5 @@
+import { renderLoading, removeLoading } from "../render/renderLoading";
+
 /**
  *
  * @param {Object} location Contains the city, latitude, and longitude
@@ -15,10 +17,11 @@ export const getData = async (location) => {
   };
 
   try {
+    renderLoading();
     const response = await fetch(url, options);
     const result = await response.json();
-    //TODO: Borrar console.log
-    console.log(result);
+    removeLoading();
+
     return result;
   } catch (error) {
     throw new Error(error);
