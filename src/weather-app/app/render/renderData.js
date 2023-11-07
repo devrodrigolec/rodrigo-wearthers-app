@@ -26,7 +26,7 @@ export const renderData = (data) => {
   const dateHTML = document.querySelector("#date");
   const timeHTML = document.querySelector("#time");
 
-  const date = new Date(localtime);
+  const date = formattedDate(localtime);
   const dayOfWeek = [
     "Sunday",
     "Monday",
@@ -62,4 +62,19 @@ export const renderData = (data) => {
  */
 const format0BeforeIf = (number) => {
   return number < 10 ? `0${number}` : `${number}`;
+};
+
+/**
+ * The 'localtime' data received from the API comes with a deprecated format.
+ * This function fixes the format to ensure proper functionality.
+ * @param {String} localtime String representing date and time
+ * @returns {Date} Returns a Date object with formatted parameters
+ */
+const formattedDate = (localtime) => {
+  const dateString = localtime;
+  const [datePart, timePart] = dateString.split(" ");
+  const [year, month, day] = datePart.split("-");
+  const [hour, minutes] = timePart.split(":");
+
+  return new Date(year, month - 1, day, hour, minutes);
 };

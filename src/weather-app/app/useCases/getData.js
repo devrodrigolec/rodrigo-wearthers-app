@@ -17,6 +17,8 @@ export const getData = async (location) => {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
+    //TODO: Borrar console.log
+    console.log(result);
     return result;
   } catch (error) {
     throw new Error(error);
