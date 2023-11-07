@@ -1,8 +1,8 @@
 export const locationData = [
   {
     location: "lima",
-    lat: -12.04318,
-    lng: -77.02824,
+    lat: -12.116235638751032,
+    lng: -77.02699164256333,
   },
   {
     location: "madrid",
@@ -53,5 +53,10 @@ export const locationData = [
     location: "paris",
     lat: 48.85341,
     lng: 2.3488,
+  },
+  {
+    location: "bangkok",
+    lat: 13.7407,
+    lng: 100.5467,
   },
 ];

@@ -36,7 +36,22 @@ export const renderData = (data) => {
     "Friday",
     "Saturday",
   ];
+  const monthOfYear = [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+  ];
   const day = dayOfWeek[date.getDay()];
+  const month = monthOfYear[date.getMonth()];
 
   dayHTML.textContent = day;
   cityHTML.textContent = region;
@@ -47,9 +62,9 @@ export const renderData = (data) => {
   conditionHTML.textContent = weatherCondition;
   humidityHTML.textContent = humidity;
   windHTML.textContent = wind_kph;
-  dateHTML.textContent = `${format0BeforeIf(date.getDate())}-${format0BeforeIf(
-    date.getMonth()
-  )}-${date.getFullYear()}`;
+  dateHTML.textContent = `${format0BeforeIf(
+    date.getDate()
+  )}-${month}-${date.getFullYear()}`;
   timeHTML.textContent = `${format0BeforeIf(date.getHours())}:${format0BeforeIf(
     date.getMinutes()
   )}`;
@@ -76,5 +91,5 @@ const formattedDate = (localtime) => {
   const [year, month, day] = datePart.split("-");
   const [hour, minutes] = timePart.split(":");
 
-  return new Date(year, month, day, hour, minutes);
+  return new Date(year, month - 1, day, hour, minutes);
 };
