@@ -76,5 +76,5 @@ const formattedDate = (localtime) => {
   const [year, month, day] = datePart.split("-");
   const [hour, minutes] = timePart.split(":");
 
-  return new Date(year, month - 1, day, hour, minutes);
+  return new Date(year, month, day, hour, minutes);
 };
